@@ -1,6 +1,6 @@
 ---
-ec2_access_key: 
-ec2_secret_key: 
+ec2_access_key: AKIAJ3GUSSMNK6FTJHGA
+ec2_secret_key: 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
 ec2_region: us-east-1
 ec2_zone: us-east-1a
 ec2_image: ami-9e2f0988

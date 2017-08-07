@@ -24,7 +24,7 @@
   - name: Add new instance to host group
     local_action: add_host
       hostname="{{ item.public_ip }}"
-      groupname="{{ ec2_instance_tag }"
+      groupname="{{ ec2_instance_tag }}"
     with_items: ec2.instances
 
   - name: Wait for SSH to come up
