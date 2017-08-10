@@ -1,0 +1,11 @@
+---
+# Playbook to provision and deploy the entire stack to AWS
+
+- name: provision AWS resources
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+
+  roles:
+    - provisioner

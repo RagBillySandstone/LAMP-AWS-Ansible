@@ -1,0 +1,9 @@
+---
+ec2_region: us-east-1
+ec2_zone: us-east-1a
+ec2_image: ami-9e2f0988
+ec2_instance_type: t2.micro
+ec2_keypair: us-east-1
+ec2_security_group: web-and-ssh
+ec2_instance_count: 1
+ec2_instance_tag: dbservers

@@ -1,11 +1,3 @@
 ---
-ec2_access_key: AKIAJ3GUSSMNK6FTJHGA
-ec2_secret_key: 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
-ec2_region: us-east-1
-ec2_zone: us-east-1a
-ec2_image: ami-9e2f0988
-ec2_instance_type: t2.micro
-ec2_keypair: us-east-1
-ec2_security_group: web-and-ssh
-ec2_instance_count: 2
-ec2_instance_tag: webserver 
+ec2_access_key: YOUR_ACCESS_KEY_GOES_HERE
+ec2_secret_key: YOUR_SECRET_KEY_GOES_HERE
