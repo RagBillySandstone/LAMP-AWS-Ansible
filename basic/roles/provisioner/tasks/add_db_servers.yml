@@ -1,24 +1,27 @@
 ---
 # Provision the DB instance(s):
+- name: Include all DB server variables
+  include_vars: ../../../group_vars/dbservers
 
 - name: Launch DB instances
   ec2:
-   access_key="{{ ec2_access_key }}"
-   secret_key="{{ ec2_secret_key }}"
-   keypair="{{ ec2_keypair }}"
-   group="{{ ec2_security_group }}"
-   type="{{ ec2_instance_type }}"
-   image="{{ ec2_image }}"
-   region="{{ ec2_region }}"
-   instance_tags="{'name':'{{ ec2_instance_tag }}', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}'}"
-   count="{{ ec2_instance_count }}"
-   wait=true
+    access_key="{{ ec2_access_key }}"
+    secret_key="{{ ec2_secret_key }}"
+    keypair="{{ ec2_keypair }}"
+    group="{{ ec2_security_group }}"
+    type="{{ ec2_instance_type }}"
+    image="{{ ec2_image }}"
+    region="{{ ec2_region }}"
+    exact_count="{{ ec2_instance_count_db }}"
+    count_tag="{{ ec2_instance_tag_db }}"
+    instance_tags="{'Name':'{{ ec2_instance_tag_db }}', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}'}"
+    wait=true
   register: ec2
 
 - name: Add new instance to host group
   local_action: add_host
     hostname="{{ item.public_ip }}"
-    groupname="{{ ec2_instance_tag }}"
+    groupname="{{ ec2_instance_tag_db }}"
   with_items: ec2.instances
 
 - name: Wait for SSH to come up

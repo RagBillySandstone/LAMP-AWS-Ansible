@@ -1,3 +1,14 @@
 ---
-ec2_access_key: YOUR_ACCESS_KEY_GOES_HERE
-ec2_secret_key: YOUR_SECRET_KEY_GOES_HERE
+ec2_access_key: AKIAJMACNVU3CDXVTVYA
+ec2_secret_key: 1NTUHPEOrIuWksMTNXjxxx2UjlO4ljngGA1Aqv1Q
+
+# ntp servers
+ntp_server_0: 0.rhel.pool.ntp.org iburst
+ntp_server_1: 1.rhel.pool.ntp.org iburst
+ntp_server_2: 2.rhel.pool.ntp.org iburst
+ntp_server_3: 3.rhel.pool.ntp.org iburst
+
+http_port: 80
+
+ec2_instance_tag_web: web
+ec2_instance_tag_db:  db

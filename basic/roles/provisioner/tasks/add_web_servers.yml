@@ -1,5 +1,7 @@
 ---
-# Provision the webserver instance(s):
+# Provision the web server instance(s):
+- name: Include all web server variables
+  include_vars: ../../../group_vars/webservers
 
 - name: Launch webserver instances
   ec2:
@@ -10,15 +12,16 @@
    type="{{ ec2_instance_type }}"
    image="{{ ec2_image }}"
    region="{{ ec2_region }}"
-   instance_tags="{'name':'{{ ec2_instance_tag }}', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}'}"
-   count="{{ ec2_instance_count }}"
+   exact_count="{{ ec2_instance_count_web }}"
+   count_tag="{{ ec2_instance_tag_web }}"
+   instance_tags="{'Name':'{{ ec2_instance_tag_web }}', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}'}"
    wait=true
   register: ec2
 
 - name: Add new instance to host group
   local_action: add_host
     hostname="{{ item.public_ip }}"
-    groupname="{{ ec2_instance_tag }}"
+    groupname="{{ ec2_instance_tag_web }}"
   with_items: ec2.instances
 
 - name: Wait for SSH to come up
