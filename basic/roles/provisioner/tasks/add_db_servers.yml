@@ -13,7 +13,7 @@
     image="{{ ec2_image }}"
     region="{{ ec2_region }}"
     exact_count="{{ ec2_instance_count_db }}"
-    count_tag="{{ ec2_instance_tag_db }}"
+    count_tag="{'Name':'{{ ec2_instance_tag_db }}', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}'}"
     instance_tags="{'Name':'{{ ec2_instance_tag_db }}', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}'}"
     wait=true
   register: ec2

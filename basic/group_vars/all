@@ -1,6 +1,6 @@
 ---
-ec2_access_key: AKIAJMACNVU3CDXVTVYA
-ec2_secret_key: 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
+ec2_access_key: AKIAI73EWYFOTEVHKKXA
+ec2_secret_key: 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
 
 # ntp servers
 ntp_server_0: 0.rhel.pool.ntp.org iburst
