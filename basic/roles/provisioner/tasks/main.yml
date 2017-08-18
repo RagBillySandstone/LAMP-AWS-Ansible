@@ -1,3 +1,5 @@
 ---
+- name: Deploy some EC2 servers
+  include_vars: ../../../group_vars/creds
 - include: add_db_servers.yml
 - include: add_web_servers.yml

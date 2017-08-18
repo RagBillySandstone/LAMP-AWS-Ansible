@@ -1,7 +1,6 @@
 ---
-ec2_access_key: AKIAI73EWYFOTEVHKKXA
-ec2_secret_key: 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
-
+include_vars:
+  file: creds
 # ntp servers
 ntp_server_0: 0.rhel.pool.ntp.org iburst
 ntp_server_1: 1.rhel.pool.ntp.org iburst
